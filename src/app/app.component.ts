@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'my-app',
+  template: `
+   <navbar></navbar>
+  <welcome></welcome>  
+   <cardlist></cardlist> 
+   <about></about>
+   <wp-services></wp-services> 
+  
+   <footerSection></footerSection>
+  `
 })
-export class AppComponent {
-  title = 'app works!';
-}
+export class AppComponent { }

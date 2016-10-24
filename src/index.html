@@ -1,15 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>CLIGenerated</title>
-  <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <head>
+    <title>Otthon Kalauz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.write('<base href="' + document.location + '" />');</script> 
+     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   
-</head>
-<body>
-  <app-root>Loading...</app-root>
-</body>
+  
+  
+  <!-- Bootstrap Core CSS -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <!-- Theme CSS  -->
+  <link href="assets/css/mdb.min.css" rel="stylesheet">
+
+  <link href="assets/css/styles.css" rel="stylesheet">
+
+  <link href="assets/css/loadingcircle.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+  
+  </head>
+
+<body id="page-top">
+
+ 
+  <my-app>
+  <div class="outer">
+      <div class="middle">
+        <div class="inner">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div></my-app>
+ <!-- JQuery -->
+  <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+  <script src="assets/js/tether.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/mdb.min.js"></script>
+
+
+ <script type="text/javascript">
+$(document).ready(function() {
+	var s = $("#sticker");
+	var pos = s.position();	
+	var stickermax = $(document).outerHeight() - $("#footer").outerHeight() - s.outerHeight() - 40; //40 value is the total of the top and bottom margin
+	$(window).scroll(function() {
+		var windowpos = $(window).scrollTop()+597;
+	//	s.html("stickermax:" + stickermax +  "<br/ >Distance from top:" + pos.top + "<br />Scroll position (window pos): " + windowpos);
+		if (windowpos >= pos.top && windowpos < stickermax) {
+		//	s.attr("style", ""); //kill absolute positioning    
+      	s.removeClass();
+			s.addClass("stick"); //stick it
+		} else if (windowpos >= stickermax) {
+			s.removeClass(); //un-stick
+      	s.addClass("sticker"); //stick it
+			s.css({position: "absolute", top: stickermax + "px"}); //set sticker right above the footer
+			
+		} else {
+			s.removeClass(); //top of page
+      	s.addClass("sticker");
+		}
+	});
+	//alert(stickermax); //uncomment to show max sticker postition value on doc.ready
+});
+</script>
+
+ <script>
+   $(document).ready(function(){
+
+    new WOW().init();
+
+    $(window).on('resize',function(){
+       var winWidth =  $(window).width();
+       if(winWidth < 576 ){
+          console.log('Window Width: '+ winWidth + 'class used: col-xs');
+       }else if( winWidth <= 720){
+          console.log('Window Width: '+ winWidth + 'class used: col-sm');
+       }else if( winWidth <= 940){
+          console.log('Window Width: '+ winWidth + 'class used: col-md');
+       }else{
+          console.log('Window Width: '+ winWidth + 'class used: col-lg');
+       }
+    });
+});
+</script>
 </html>
